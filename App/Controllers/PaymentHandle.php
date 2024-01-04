@@ -5,7 +5,7 @@ class PaymentHandle extends BaseController
     const vnp_TmnCode = "G421CTS3"; //Mã website tại VNPAY 
     const vnp_HashSecret = "QBEBZUMOAJNSGCUPTMGQEHBTFRGJREOI"; //Chuỗi bí mật
     public function Purchased()
-    {
+    {   
         $vnp_SecureHash = $_GET['vnp_SecureHash'];
         $inputData = array();
         foreach ($_GET as $key => $value) {
@@ -32,6 +32,7 @@ class PaymentHandle extends BaseController
             if ($_GET['vnp_ResponseCode'] == '00') {
                 SessionManager::SetSession('status',true);
                 header('location:'.SessionManager::GetSession('callbackUrl'));
+                
             } else {
                 SessionManager::SetSession('status',false);
                 echo "<span style='color:red'>Giao dịch không thành công</span>";

@@ -25,7 +25,8 @@ class Auth extends BaseController
             SessionManager::SetSession(SessionManager::USER_ROLE, $role);
             if ($role == "khachhang") {
                 header('location:' . _WEB . '/Home/index');
-            } if($role == "doitacquangcao") {
+                // lúc đầu hok của sử ls if esle đàng quàng giwof coi làm payment 
+            }else if($role == "doitacquangcao") {
                 header('location:' . _WEB . '/ads/Advertisement/index');
             }else{
                 header('location:' . _WEB . '/admin/video/index');

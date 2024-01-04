@@ -1,4 +1,4 @@
-<form action="<?php echo _WEB . "/admin/service/addService" ?>" method="post">
+<form  action="<?php echo _WEB . "/admin/service/addService" ?>"method="post">
     <div class="row">
         <div class="col-4">
             <div>

@@ -114,7 +114,7 @@
                 $datarq['vnp_OrderInfo']//9
             ); 
 
-            $checksum = hash_hmac('SHA512', $dataHash, $vnp_HashSecret);
+            $checksum = hash_hmac('sha512', $dataHash, $vnp_HashSecret);
             $datarq["vnp_SecureHash"] = $checksum;
             $txnData = callAPI_auth("POST", $apiUrl, json_encode($datarq));
             $ispTxn = json_decode($txnData, true);

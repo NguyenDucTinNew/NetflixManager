@@ -130,10 +130,13 @@ h5 {
       <h3><?php echo $package['name']; ?></h3>
       <p class="price">Giá Tiền: <?php echo $package['price']; ?>$$</p>
       <p>Thời hạn: <?php echo $package['duration']; ?> Ngày</p>
-      <p><button>Mua Hàng</button></p>
+      <form method="POST" action="<?php echo _WEB . "/vnpay_php/index.php" ?>">
+  <p><button type="submit" name="redirect" onclick="return confirm('Xác Nhận Thanh Toán')">Mua Hàng</button></p>
+</form>
     </div>
   <?php } ?>
 </div>
+
 <a href="<?php echo _WEB ?>/cus/customerservice/recommend" >Các Gói Dịch Vụ Tương T</a>
 </body>
 </html>
